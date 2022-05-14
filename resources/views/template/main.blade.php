@@ -11,6 +11,7 @@
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
         <!--Icon-->
         <script src="https://kit.fontawesome.com/f67ab1f0a2.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
         <link rel='icon' type='image/png' href='/images/favicon.ico'>
 
         {{-- Leaflt Map CSS--}}
@@ -33,73 +34,123 @@
     <body>
 
         {{-- Navigation --}}
-        <nav class="navbar navbar-custom navbar-expand-md justify-content-center px-3 py-2 sticky-top">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="fas fa-bars"></span>
-            </button>
-            <a href="" class="navbar-brand w-25 h-25"><img src="/images/logo.png" id="logo"></a>
-
-            <div class="navbar-collapse collapse">
-                <ul class="navbar-nav w-50 mr-auto justify-content-end nav-justified">
-                    <li class="nav-item mr-2">
-                        <a class="nav-link" href="{{ route('home') }}">Home</a>
+        <div class="Navbar container-fluid px-0 pb-5">
+          <nav class="navbar navbar-expand-lg navbar-light navbar-fixed fixed-top">
+              <div class="container-fluid px-0 px-md-5">
+                <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class='mx-auto'>
+                    <img src="/images/logo.png" alt='logo' class="wave-logo img-fluid"/>
+                </div>
+                <div class="collapse navbar-collapse ps-3" id="navbarNav">
+                  
+                  <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ route('home') }}">Home</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="{{ route('articles') }}" class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
-                          Articles
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">                           
-                                <a class="dropdown-item" href=""></a>
-                        </div>                        
+                      <a 
+                        class="nav-link dropdown-toggle" 
+                        id="navbarDropdown" 
+                        role="button" 
+                        data-bs-toggle="dropdown" 
+                        aria-expanded="false" 
+                        href="{{ route('articles') }}">
+                        Articles
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="drop-item active bg-light" href="/article">All articles</a></li>
+                        <li><a class="drop-item active bg-light" href='/Coming_Soon'>Featured</a></li>
+                        <li><a class="drop-item active bg-light" href="/Coming_Soon">Latest</a></li>
+                      </ul>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                      <a 
+                        class="nav-link dropdown-toggle" 
+                        id="navbarDropdown" 
+                        role="button" 
+                        data-bs-toggle="dropdown" 
+                        aria-expanded="false" 
+                        href="/Coming_Soon">
+                       Exhibit
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="drop-item active bg-light" href="/exhibits">All exhibit</a></li>
+                        <li><a class="drop-item active bg-light" href="/Coming_Soon">Recent</a></li>
+                        <li><a class="drop-item active bg-light" href="/Coming_Soon">Upcoming</a></li>
+                        <li><a class="drop-item active bg-light" href="/Coming_Soon">Gallery</a></li>
+                      </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
-                         Exhibits
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">                           
-                                <a class="dropdown-item" href=""></a>
-                        </div>                        
-                    </li>
-        
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
-                          Innovators
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">                           
-                                <a class="dropdown-item" href=""></a>
-                        </div>                        
-                    </li>
-        
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
-                          Products
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">                           
-                                <a class="dropdown-item" href=""></a>
-                        </div>                        
+                      <a 
+                        class="nav-link dropdown-toggle" 
+                        id="navbarDropdown" 
+                        role="button" 
+                        data-bs-toggle="dropdown" 
+                        aria-expanded="false" 
+                        href="/innovators">
+                       Innovators
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="drop-item active bg-light" href="/featured_innovators">Featured</a></li>
+                        <li><a class="drop-item active bg-light" href="/Coming_Soon">Newest</a></li>
+                      </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
-                         Labs
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">                           
-                                <a class="dropdown-item" href=""></a>
-                        </div>                        
+                      <a 
+                        class="nav-link dropdown-toggle" 
+                        id="navbarDropdown" 
+                        role="button" 
+                        data-bs-toggle="dropdown" 
+                        aria-expanded="false" 
+                        href="/pro">
+                        Products
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="drop-item active bg-light" href="/products">All products</a></li>
+                        <li><a class="drop-item active bg-light" href="/Coming_Soon">Categories</a></li>
+                        <li><a class="drop-item active bg-light" href="/Coming_Soon">New</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a 
+                        class="nav-link dropdown-toggle" 
+                        id="navbarDropdown" 
+                        role="button" 
+                        data-bs-toggle="dropdown" 
+                        aria-expanded="false" 
+                        href="/labs">
+                       Labs
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="drop-item active bg-light" href="/Coming_Soon">Innovation</a></li>
+                        <li><a class="drop-item active bg-light" href="/Coming_Soon">Incubation</a></li>
+                      </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">About</a>
+                      <a class="nav-link" href="/about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Contact</a>
+                      <a class="nav-link" href="/contact">Contact</a>
                     </li>
-
-        
-        
-                </ul>
-
-            </div>
-        
-        </nav>
+                   
+                  </ul>
+                  <div class="signIn d-flex">
+                    <div class="pe-2 py-2 text-dark">
+                      <i class="bi bi-bag pe-2"></i>
+                      <span>0</span>
+                    </div>
+                    
+                    <a href="#" class="text-decoration-none" style="color: black; z-index: 1"> 
+                      <button class="btn text-light" style="background-color: blue">Sign in</button>
+                    </a> 
+                  </div>
+                </div>
+              </div>
+            </nav>
+        </div>
 
         {{-- Page Content --}}
         <div class="content">
