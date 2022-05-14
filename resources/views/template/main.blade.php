@@ -60,9 +60,9 @@
                         Articles
                       </a>
                       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="drop-item active bg-light" href="/article">All articles</a></li>
-                        <li><a class="drop-item active bg-light" href='/Coming_Soon'>Featured</a></li>
-                        <li><a class="drop-item active bg-light" href="/Coming_Soon">Latest</a></li>
+                        <li><a class="drop-item bg-light" href="/article">All articles</a></li>
+                        <li><a class="drop-item bg-light" href='/Coming_Soon'>Featured</a></li>
+                        <li><a class="drop-item bg-light" href="/Coming_Soon">Latest</a></li>
                       </ul>
                     </li>
                     
@@ -77,10 +77,10 @@
                        Exhibit
                       </a>
                       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="drop-item active bg-light" href="/exhibits">All exhibit</a></li>
-                        <li><a class="drop-item active bg-light" href="/Coming_Soon">Recent</a></li>
-                        <li><a class="drop-item active bg-light" href="/Coming_Soon">Upcoming</a></li>
-                        <li><a class="drop-item active bg-light" href="/Coming_Soon">Gallery</a></li>
+                        <li><a class="drop-item bg-light" href="/exhibits">All exhibit</a></li>
+                        <li><a class="drop-item bg-light" href="/Coming_Soon">Recent</a></li>
+                        <li><a class="drop-item bg-light" href="/Coming_Soon">Upcoming</a></li>
+                        <li><a class="drop-item bg-light" href="/Coming_Soon">Gallery</a></li>
                       </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -94,8 +94,8 @@
                        Innovators
                       </a>
                       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="drop-item active bg-light" href="/featured_innovators">Featured</a></li>
-                        <li><a class="drop-item active bg-light" href="/Coming_Soon">Newest</a></li>
+                        <li><a class="drop-item bg-light" href="/featured_innovators">Featured</a></li>
+                        <li><a class="drop-item bg-light" href="/Coming_Soon">Newest</a></li>
                       </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -109,9 +109,9 @@
                         Products
                       </a>
                       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="drop-item active bg-light" href="/products">All products</a></li>
-                        <li><a class="drop-item active bg-light" href="/Coming_Soon">Categories</a></li>
-                        <li><a class="drop-item active bg-light" href="/Coming_Soon">New</a></li>
+                      <li><a class="drop-item bg-light" href="/products">All products</a></li>
+                        <li><a class="drop-item bg-light" href="/Coming_Soon">Categories</a></li>
+                        <li><a class="drop-item bg-light" href="/Coming_Soon">New</a></li>
                       </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -125,8 +125,8 @@
                        Labs
                       </a>
                       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="drop-item active bg-light" href="/Coming_Soon">Innovation</a></li>
-                        <li><a class="drop-item active bg-light" href="/Coming_Soon">Incubation</a></li>
+                        <li><a class="drop-item bg-light" href="/Coming_Soon">Innovation</a></li>
+                        <li><a class="drop-item bg-light" href="/Coming_Soon">Incubation</a></li>
                       </ul>
                     </li>
                     <li class="nav-item">
