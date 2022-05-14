@@ -60,7 +60,7 @@
                         Articles
                       </a>
                       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="drop-item bg-light" href="/article">All articles</a></li>
+                        <li><a class="drop-item bg-light" href="{{ route('articles') }}">All articles</a></li>
                         <li><a class="drop-item bg-light" href='/Coming_Soon'>Featured</a></li>
                         <li><a class="drop-item bg-light" href="/Coming_Soon">Latest</a></li>
                       </ul>

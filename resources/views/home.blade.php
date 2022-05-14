@@ -86,7 +86,7 @@
                 <div class="card-body">
                     <img src="/uploads/articles/{{ $a->image or 'placeholder.png' }}" class="card-img">
                     <small class="date-sm">{{ $a->created_at->format('F j, Y') }}</small>
-                    <div class="w-100 text-center my-3">
+                    <div class="w-100 text-left my-3">
                         <div style="height: 60px">
                             <h5 class="line-clamp">{{ $a->title }}</h5>
                         </div>
@@ -113,7 +113,7 @@
                 <div class="card-body">
                     <img src="/uploads/articles/{{ $b->image or 'placeholder.png' }}" class="card-img">
                     <small class="date-sm">{{ $b->created_at->format('F j, Y') }}</small>
-                    <div class="w-100 text-center my-3">
+                    <div class="w-100 text-left my-3">
                         <div style="height: 60px">
                             <h5 class="line-clamp">{{ $b->title }}</h5>
                         </div>
@@ -138,7 +138,7 @@
                 <div class="card-body">
                     <img src="/uploads/articles/{{ $c->image or 'placeholder.png' }}" class="card-img">
                     <small class="date-sm">{{ $c->created_at->format('F j, Y') }}</small>
-                    <div class="w-100 text-center my-3">
+                    <div class="w-100 text-left my-3">
                         <div style="height: 60px">
                             <h5 class="line-clamp">{{ $c->title }}</h5>
                         </div>
@@ -150,9 +150,5 @@
         </div>
     @endforeach
 </div>
-
-
-
-
 
 @endsection
