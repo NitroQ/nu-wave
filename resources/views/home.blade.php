@@ -142,7 +142,7 @@
                         <div style="height: 60px">
                             <h5 class="line-clamp">{{ $c->title }}</h5>
                         </div>
-                        <p class="line-clamp">{!! strip_tags($b->description) !!}</p>
+                        <p class="line-clamp">{!! strip_tags($c->description) !!}</p>
                         <a href="{{ route('article-view' , [$c->id]) }}">Read Details</a>
                     </div>
                 </div>
