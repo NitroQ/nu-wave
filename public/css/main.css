@@ -156,12 +156,12 @@ body{
 }
 
 .alert-card h5{
-    color: #2634B2;
+    color: black;
     font-weight: bold;
 }
 
 .alert-card a{
-    color: black;
+    color: gray;
     font-weight: bold;
 }
 
