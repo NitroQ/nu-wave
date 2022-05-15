@@ -7,9 +7,21 @@
     height: 65vh; 
     object-fit:cover; 
 }
+.img-cover{
+        object-fit: cover; 
+        height:65vh;
+        width: 100%;
+    }
+@media and (max-width: 540px){
+    #inner-car{
+        height: 300px; 
+        object-fit: cover; 
+    }
+
+}
 </style>
 <div class="row">
-    <div class="col-lg-12" >
+    <div class="col-lg-12">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -18,13 +30,13 @@
             </div>
             <div class="carousel-inner" id="inner-car">
             <div class="carousel-item active">
-                <img src="/images/carousel1.png" class="d-block w-100" alt="...">
+                <img src="/images/carousel1.png" class="d-block img-cover" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="/images/carousel2.png" class="d-block w-100" alt="...">
+                <img src="/images/carousel2.png" class="d-block img-cover" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="/images/carousel3.png" class="d-block w-100" alt="...">
+                <img src="/images/carousel3.png" class="d-block img-cover" alt="...">
             </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -38,46 +50,45 @@
         </div>
     </div>
 </div>
-<div class="container-fluid">
-    
-<div class="row justify-content-center">
-    <div class="col-lg-6 text-center text-lg-start">
-        <h1 class=" my-5 h-b">Welcome to NU Wave!</h1>
-        <p>NU Wave is the pinnacle of innovation in National University where projects are being developed and improved to showcase the best of the best in NU. The Center for Innovation and Entrepreneurship is the vehicle of National University in the creation of a Leading Innovation Culture within the University. Ultimately, the Center will facilitate the innovation process of bringing the idea to market.
-        </p>
+<div class="container-fluid p-lg-0 px-3">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 text-center text-lg-start">
+            <h1 class=" my-5 h-b">Welcome to NU Wave!</h1>
+            <p>NU Wave is the pinnacle of innovation in National University where projects are being developed and improved to showcase the best of the best in NU. The Center for Innovation and Entrepreneurship is the vehicle of National University in the creation of a Leading Innovation Culture within the University. Ultimately, the Center will facilitate the innovation process of bringing the idea to market.
+            </p>
+        </div>
     </div>
-</div>
 
-<div class="row row-icn-icn justify-content-center px-3 my-5">
-    <div class="col-lg-2 text-center">
-        <i class="fas fa-shopping-cart"></i>
-        <br>
-        <label>eCommerce Platform</label>
-        <br>
-        <p>Grow your business in our online market. Shop for our latest projects and products created by students and help them with ideas and improvements.</p>
+    <div class="row row-icn-icn justify-content-center px-3 my-5">
+        <div class="col-lg-2 text-center">
+            <i class="fas fa-shopping-cart"></i>
+            <br>
+            <label>eCommerce Platform</label>
+            <br>
+            <p>Grow your business in our online market. Shop for our latest projects and products created by students and help them with ideas and improvements.</p>
+        </div>
+        <div class="col-lg-2 text-center">
+            <i class="fas fa-atom"></i>
+            <br>
+            <label>Incubation Hub</label>
+            <br>
+            <p>C&T Hub combines the Design Thinking Lab and Co-working Spaces, which focuses on collaboration with physical and virtual facilities giving them access to resources and links them with mentors, researchers and experts.</p>
+        </div>
+        <div class="col-lg-2 text-center">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <br>
+            <label>Thematic Training</label>
+            <br>
+            <p>Emerging technologies focusing on environment, energy, information and computing, ecommerce and creative sectors in line with the government's Industry 4.0 Roadmap and Development Plan. </p>
+        </div>
+        <div class="col-lg-2 text-center">
+            <i class="fas fa-chart-line"></i>
+            <br>
+            <label>The Metamorph</label>
+            <br>
+            <p>A 3-stage incubation program aimed at developing technology-based entrepreneurial skills leading to startups.</p>
+        </div>
     </div>
-    <div class="col-lg-2 text-center">
-        <i class="fas fa-atom"></i>
-        <br>
-        <label>Incubation Hub</label>
-        <br>
-        <p>C&T Hub combines the Design Thinking Lab and Co-working Spaces, which focuses on collaboration with physical and virtual facilities giving them access to resources and links them with mentors, researchers and experts.</p>
-    </div>
-    <div class="col-lg-2 text-center">
-        <i class="fas fa-chalkboard-teacher"></i>
-        <br>
-        <label>Thematic Training</label>
-        <br>
-        <p>Emerging technologies focusing on environment, energy, information and computing, ecommerce and creative sectors in line with the government's Industry 4.0 Roadmap and Development Plan. </p>
-    </div>
-    <div class="col-lg-2 text-center">
-        <i class="fas fa-chart-line"></i>
-        <br>
-        <label>The Metamorph</label>
-        <br>
-        <p>A 3-stage incubation program aimed at developing technology-based entrepreneurial skills leading to startups.</p>
-    </div>
-</div>
 </div>
 
 <div class="container-fluid">
