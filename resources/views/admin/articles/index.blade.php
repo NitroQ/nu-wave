@@ -47,15 +47,15 @@
                     <td>{{ $x->created_at->format('F j, Y') }} {{ $x->created_at->format('g:i A') }}</td>
                     <td>
                         @if ($x->active == 1)
-                            <a href=""><button type="button" class="btn btn-sm btn-primary">Set Inactive</button></a>&nbsp;
+                            <a href="{{ route('article.set-active' , [ $x->id ]) }}"><button type="button" class="btn btn-sm btn-primary">Set Inactive</button></a>&nbsp;
                         @else
-                            <a href=""><button type="button" class="btn btn-sm btn-outline-primary">Set Active</button></a>&nbsp;
+                            <a href="{{ route('article.set-inactive' , [ $x->id ]) }}"><button type="button" class="btn btn-sm btn-outline-primary">Set Active</button></a>&nbsp;
                          @endif
                     </td>
                     <td>
                         <div class="btn-group" role="group" aria-label="">
-                            <a href=""><button type="button" class="btn btn-sm btn-secondary">Edit</button></a>&nbsp;
-                            <a href=""><button type="button" class="btn btn-sm btn-danger">Remove</button></a>
+                            <a href="{{ route('admin.article.edit' , [ $x->id ]) }}"><button type="button" class="btn btn-sm btn-secondary">Edit</button></a>&nbsp;
+                            <a href="{{ route('article.delete' , [ $x->id ]) }}"><button type="button" class="btn btn-sm btn-danger">Remove</button></a>
                         </div>
                     </td>
                 </tr>

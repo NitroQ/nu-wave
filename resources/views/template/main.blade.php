@@ -90,12 +90,12 @@
                         role="button" 
                         data-bs-toggle="dropdown" 
                         aria-expanded="false" 
-                        href="/innovators">
+                        href="{{ route('innovators') }}">
                        Innovators
                       </a>
                       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="drop-item bg-light" href="/featured_innovators">Featured</a></li>
-                        <li><a class="drop-item bg-light" href="/Coming_Soon">Newest</a></li>
+                        <li><a class="drop-item bg-light" href="{{ route('innovators') }}">Featured</a></li>
+                        <li><a class="drop-item bg-light" href="{{ route('innovators') }}">Newest</a></li>
                       </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -105,11 +105,11 @@
                         role="button" 
                         data-bs-toggle="dropdown" 
                         aria-expanded="false" 
-                        href="/pro">
+                        href="{{ route('products') }}">
                         Products
                       </a>
                       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="drop-item bg-light" href="/products">All products</a></li>
+                      <li><a class="drop-item bg-light" href="{{ route('products') }}">All products</a></li>
                         <li><a class="drop-item bg-light" href="/Coming_Soon">Categories</a></li>
                         <li><a class="drop-item bg-light" href="/Coming_Soon">New</a></li>
                       </ul>

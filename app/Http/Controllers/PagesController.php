@@ -11,9 +11,9 @@ class PagesController extends Controller
 {
     public function home(){
 
-        $articles = Articles::where('category','=','Article')->latest()->limit(3)->get();
+        $articles = Articles::where('category','=','Article')->latest()->limit(5)->get();
         $products = Articles::where('category','=','Products')->latest()->limit(3)->get();
-        $innovator = Articles::where('category','=','Innovators')->latest()->limit(3)->get();
+        $innovator = Articles::where('category','=','Innovators')->latest()->limit(1)->get();
        
         return view('home', [
             'articles' => $articles,
@@ -32,10 +32,26 @@ class PagesController extends Controller
 
     public function articles(){
 
-        $articles = Articles::get();
+        $articles = Articles::where('category','=','Article')->latest()->get();
 
         return view('public.article' , [
             'articles' => $articles
+        ]);
+    }
+    public function products(){
+
+        $products= Articles::where('category','=','Products')->latest()->get();
+
+        return view('public.products' , [
+            'products' => $products
+        ]);
+    }
+    public function innovators(){
+
+        $innovators= Articles::where('category','=','Innovators')->latest()->get();
+
+        return view('public.innovators' , [
+            'innovators' => $innovators
         ]);
     }
 

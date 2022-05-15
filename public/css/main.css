@@ -3,35 +3,6 @@ body{
 }
 
 /* Fonts */
-@font-face {
-    font-family: 'SCPSemibold';
-    src: url('/fonts/SourceCodePro-SemiBold.ttf');
-}
-
-@font-face {
-    font-family: 'SCPBold';
-    src: url('/fonts/SourceCodePro-BoldItalic.ttf');
-}
-
-@font-face {
-    font-family: 'SSPBlackI';
-    src: url('/fonts/SourceSansPro-BlackItalic.ttf');
-}
-
-@font-face {
-    font-family: 'SSPReg';
-    src: url('/fonts/SourceSansPro-Regular.ttf');
-}
-
-@font-face {
-    font-family: 'SSPSBold';
-    src: url('/fonts/SourceSansPro-SemiBold.ttf');
-}
-
-.scpBold{
-    font-style: SCPBold;
-}
-
 /* Nav */
 .Navbar {
     overflow: hidden;
@@ -142,7 +113,7 @@ body{
 }
 
 .h-b{
-    font-style: SCPBold;
+    font-style: Arial;
     font-style: italic;
     color: #2634B2;
 }
@@ -164,7 +135,7 @@ body{
 
 .card-img{
     width: 100%;
-    height: 200px;
+    height: 250px;
     object-fit: cover;
 }
 
@@ -196,31 +167,6 @@ body{
 .card-mini:hover{
     background-color: #2634B2;
     color: white!important;
-}
-
-/* For Evacuation Centers*/
-#sect_subtitle {
-    font-family: SSPSBold;
-    font-size: 20px;
-}
-
-#redline {
-    background-color: rgb(167, 42, 44);
-    border: 2px solid rgb(167, 42, 44);
-}
-
-/* Specific Centers*/
-.IconMain {
-    height: 60px;
-    width: auto;
-    margin-top: 30px;
-}
-
-.cent_name {
-    display: inline-block;
-    margin-left: 20px;
-    font-size: 16px;
-    margin-top: 20px;
 }
 
 /* Main Picture */
@@ -308,7 +254,7 @@ body{
 }
 
 .note {
-    font-style: SCPBold;
+    font-style: Arial;
     font-style: italic;
     color: #2634B2;
     margin-top: 50px;
@@ -320,12 +266,12 @@ body{
 }
 
 .card-title {
-    font-style: SCPBold;
+    font-style: Arial;
     color: #2634B2;
 }
 
 .headerplan {
-    font-style: SCPBold;
+    font-style: Arial;
     font-style: italic;
     color: #fff;
     top: 70%;
@@ -334,7 +280,7 @@ body{
 }
 
 .subheadliner {
-    font-style: SCPBold;
+    font-style: Arial;
     font-style: italic;
     color: #2634B2;
 }

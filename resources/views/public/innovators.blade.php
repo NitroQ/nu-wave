@@ -12,14 +12,14 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-lg-6 text-left">
-            <h1 class=" mt-5 h-b">Latest Articles</h1>
+            <h1 class=" mt-5 h-b">CenTIE Innovators</h1>
        </div>
     </div>
 </div>
     <div class="container pb-5 pt-3">
       <div class="row justify-content-center">
           <div class="col-lg-8">
-            @foreach ($articles as $a)
+            @foreach ($innovators as $a)
             <div class="row border border-dark rounded py-3 mt-3">
                 <div class="col-lg-4 d-flex justify-content-center" >
                     <img src="/uploads/articles/{{ $a->image or 'placeholder.png' }}" alt="" id="article-img" class="img-fluid">
