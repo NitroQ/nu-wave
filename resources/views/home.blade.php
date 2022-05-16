@@ -1,7 +1,6 @@
 @extends('template.main')
 
-@section('main-content')
-
+@section('css')
 <style>
     #inner-car{
     height: 65vh; 
@@ -20,6 +19,10 @@
 
 }
 </style>
+@endsection
+
+
+@section('main-content')
 <div class="row">
     <div class="col-lg-12">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -52,7 +55,7 @@
 </div>
 <div class="container-fluid p-lg-0 px-3">
     <div class="row justify-content-center">
-        <div class="col-lg-6 text-center text-lg-start">
+        <div class="col-lg-8 text-center text-lg-start">
             <h1 class=" my-5 h-b">Welcome to NU Wave!</h1>
             <p>NU Wave is the pinnacle of innovation in National University where projects are being developed and improved to showcase the best of the best in NU. The Center for Innovation and Entrepreneurship is the vehicle of National University in the creation of a Leading Innovation Culture within the University. Ultimately, the Center will facilitate the innovation process of bringing the idea to market.
             </p>
@@ -122,7 +125,7 @@
                     <div class="row mt-lg-0 mt-3">
             @php $i++; @endphp
             @else
-                        <div class="col-6 col-lg-5 {{ $i>=3 ? 'mt-3': '' }}">
+                        <div class="col-6 {{ $i>=3 ? 'mt-3': '' }}">
                             <div class="card alert-card">
                                 <div class="card-body">
                                     <img src="/uploads/articles/{{ $a->image or 'placeholder.png' }}" class="img-fluid" style=" width: 100%;height: 150px; object-fit: cover;">

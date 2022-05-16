@@ -157,6 +157,8 @@
             @yield('main-content')
         </div>
 
+        <div class="mt-5 pt-5" style="height:200px;"></div>
+
         <footer class="footer p-3">
             <div class="Footer container-fluid px-0">
                 <div class="container">
@@ -434,18 +436,5 @@
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        {{-- Sweet Alerts --}}
-        <script>
-            @if(Session::has('donation_success'))
-                Swal.fire({
-                imageUrl: '/images/thankyou.png',
-                imageHeight: 200,
-                html:
-                    '<h4 style="color:#A72A2C">Thank you for Donating!</h4>' + 
-                    '<p>You are the special type of person that changes lives, lifts people up, and makes the world a better place. Thank you for your donation and your association with our cause.</p>',
-                confirmButtonText: 'Ok'
-                })
-            @endif
-        </script>
     </body>
 </html>

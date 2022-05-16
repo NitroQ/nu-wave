@@ -54,5 +54,7 @@ class PagesController extends Controller
             'innovators' => $innovators
         ]);
     }
-
+    public function soon(){
+        return view('soon');
+    }
 }

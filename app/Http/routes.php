@@ -16,6 +16,7 @@ Route::get('/article-view/{id}' , 'PagesController@articleView')->name('article-
 Route::get('/articles' , 'PagesController@articles')->name('articles');
 Route::get('/products' , 'PagesController@products')->name('products');
 Route::get('/innovators' , 'PagesController@innovators')->name('innovators');
+Route::get('/Coming_Soon' , 'PagesController@soon')->name('soon');
 Route::get('/admin', function () {
     return redirect()->route('admin.article.index');
 });
