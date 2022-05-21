@@ -34,7 +34,7 @@ body{
 
   }
   .Navbar .active {
-    color: blue !important;
+    color: #2634B2 !important;
   }
 
   .Navbar .navbar-dark .navbar-nav .nav-link {
@@ -44,7 +44,7 @@ body{
     color: rgb(60, 54, 54);
   }
   .Navbar .active {
-    color: blue;
+    color: #2634B2;
     text-align: justify;
   }
   .Navbar .wave-logo {
@@ -426,7 +426,7 @@ ul.links{
     height: fit-content;
   }
   .Footer .li a :hover {
-    color:  blue;
+    color:  #2634B2;
   }
   .Footer .content i {
     cursor: pointer;

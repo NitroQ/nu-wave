@@ -29,10 +29,10 @@
         {{-- Navigation --}}
         <nav class="navbar shadow navbar-expand-lg">
 
-            <a href="/" class="navbar-brand w-50 mr-auto"><img src="/images/whitelogobrand.png" height="45px"></a>
+            <a href="/" class="navbar-brand w-50 mr-auto"><img src="/images/logo.png" height="30px"></a>
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="" style="color: white">Signout</a>
+                    <a class="nav-link" href="{{ route('logout') }}">Signout</a>
                 </li>
             </ul>
 
@@ -41,7 +41,7 @@
         <div class="d-flex" id="wrapper">
 
         {{-- Side Navigation --}}
-        <div class="sidebar-dark border-right" id="sidebar-wrapper">
+        <div class="sidebar-light border-right" id="sidebar-wrapper">
             <ul class="nav navbar-nav side-nav mt-3">
               <li>
                 <a href=""><i class="fas fa-map"></i> Dashboard</a>

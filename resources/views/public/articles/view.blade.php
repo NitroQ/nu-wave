@@ -1,5 +1,6 @@
 @extends('template.main')
 
+@section('title', 'NU Wave | Article')
 @section('main-content')
 
 <div class="row">

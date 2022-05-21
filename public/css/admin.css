@@ -24,7 +24,7 @@
 }
 
 .navbar{
-    background-color: #212429;
+    background-color: white;
 }
 
 .fa-caret-down{
@@ -59,14 +59,14 @@ ul{
   padding: 10px 10px 10px 10px;
   text-decoration: none;
   width: 15rem;
-  color: white!important;
+  color: black!important;
   margin-bottom: 10px;
 }
 
 .side-nav li a:hover,
 .side-nav li a.active {
   outline: none;
-  background-color:#A72A2C !important;
+  background-color:#2634B2 !important;
   font-weight: bold;
 }
 
@@ -86,11 +86,12 @@ ul{
 
 .side-nav>li>ul>li>a:hover {
 	color: #fff;
-	background-color: #A72A2C !important;
+	background-color: #2634B2 !important;
 }
 
-.sidebar-dark{
-  background-color: #212429;
+.sidebar-light{
+  background-color: white;
+  color: black;
 }
 
 @media (min-width: 768px) {
@@ -110,8 +111,8 @@ ul{
 
 /* Table Styling */
 .thead-cust-dark{
-    background-color: #212429;
-    color: white;
+    background-color: white;
+    color: black;
 }
 
 /* Form Styling */
@@ -121,7 +122,7 @@ label{
 
 /* Dashboard */
 .card-stat{
-  border-left: 10px solid #A72A2C;
+  border-left: 10px solid #2634B2;
   border-radius: 0;
   width: 100%;
 }
@@ -134,7 +135,7 @@ label{
 }
 
 .card-text {
-  color: #A72A2C;
+  color: #2634B2;
   margin-bottom: 0;
   font-size: 25px;
   font-weight: bold;
@@ -142,7 +143,7 @@ label{
 }
 
 .card-icn{
-  color: #A72A2C;
+  color: #2634B2;
   width: 50px;
   height: 50px;
   float: left;
@@ -172,7 +173,7 @@ label{
 }
 .col-a{
   text-decoration: none!important;
-  color: #A72A2C;
+  color: #2634B2;
   float: right;
 }
 .list-ec:hover{
@@ -184,7 +185,7 @@ label{
 
 .people-card{
   width: 100%;
-  background-color: #A72A2C;
+  background-color: #2634B2;
   color: white;
 }
 
@@ -200,7 +201,7 @@ label{
 
 .amount-card{
   width: 100%;
-  background-color: #A72A2C;
+  background-color: #2634B2;
   color: white;
   padding: 5px 10px;
 }

@@ -1,5 +1,6 @@
 @extends('template.main')
 
+@section('title', 'NU Wave - Coming Soon')
 @section('main-content')
     <div class="container py-5 my-5">
         <div class="row justify-content-center">

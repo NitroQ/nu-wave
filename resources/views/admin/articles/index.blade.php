@@ -17,7 +17,7 @@
 
 <div class="row">
     <div class="col col-lg-3">
-        <a href="{{ route('admin.article.create') }}"><button class="btn btn-danger w-100"><i class="fas fa-plus-circle"></i> Create An Alert!</button></a>
+        <a href="{{ route('admin.article.create') }}"><button class="btn btn-primary w-100"><i class="fas fa-plus-circle"></i> Create An Alert!</button></a>
     </div>
 </div>
 <br>
