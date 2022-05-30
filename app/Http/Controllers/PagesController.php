@@ -57,4 +57,7 @@ class PagesController extends Controller
     public function soon(){
         return view('soon');
     }
+    public function exhibits(){
+        return view('public.exhibits');
+    }
 }

@@ -17,6 +17,7 @@ Route::get('/articles' , 'PagesController@articles')->name('articles');
 Route::get('/products' , 'PagesController@products')->name('products');
 Route::get('/innovators' , 'PagesController@innovators')->name('innovators');
 Route::get('/Coming_Soon' , 'PagesController@soon')->name('soon');
+Route::get('/exhibits' , 'PagesController@exhibits')->name('exhibits');
 
 
 Route::get('/login', 'UserController@login')->name('login');
