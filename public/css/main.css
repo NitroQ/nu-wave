@@ -84,12 +84,13 @@ body{
     height: auto;
 }
 
-.row-icn-icn i{
+.row-icn-icn svg{
     font-size: 30px;
     color: #828489;
     transition: ease-in-out 0.3s;
 
 }
+
 
 .row-icn-icn label{
     font-weight: bold;
@@ -102,7 +103,7 @@ body{
 
 .row-icn-icn p{color: #4B4B4B;}
 
-.row-icn-icn .col-lg-2:hover i,
+.row-icn-icn .col-lg-2:hover svg,
 .row-icn-icn .col-lg-2:hover label{
     color: #2634B2;
 }

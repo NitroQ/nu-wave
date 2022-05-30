@@ -39,7 +39,7 @@
       <div class="row justify-content-center ">
           <div class="col-lg-8">
             @foreach ($articles as $a)
-            <div class="row border border-dark rounded py-3 m-lg-0 mt-lg-3 m-3">
+            <div class="row border border-2 rounded py-3 m-lg-0 mt-lg-3 m-3">
                 <div class="col-lg-4 d-flex justify-content-center" >
                     <img src="/uploads/articles/{{ $a->image or 'placeholder.png' }}" alt="" id="article-img" class="img-fluid">
                 </div>
