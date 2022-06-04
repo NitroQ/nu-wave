@@ -60,4 +60,7 @@ class PagesController extends Controller
     public function exhibits(){
         return view('public.exhibits');
     }
+    public function about(){
+        return view('public.about');
+    }
 }

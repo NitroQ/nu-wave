@@ -18,6 +18,8 @@ Route::get('/products' , 'PagesController@products')->name('products');
 Route::get('/innovators' , 'PagesController@innovators')->name('innovators');
 Route::get('/Coming_Soon' , 'PagesController@soon')->name('soon');
 Route::get('/exhibits' , 'PagesController@exhibits')->name('exhibits');
+Route::get('/about' , 'PagesController@about')->name('about');
+
 
 
 Route::get('/login', 'UserController@login')->name('login');
