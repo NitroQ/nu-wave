@@ -1,0 +1,59 @@
+
+@extends('template.main')
+
+@section('title', 'NU Wave | Products')
+@section('css')
+<style>
+.h-b{
+    color: #1F4E79;
+}
+#info{
+    background-image: linear-gradient(to bottom, rgb(31, 78, 121, 0.5),#FFFFFF);
+}
+</style>
+
+@endsection
+
+@section('main-content')
+
+<div class="container-fluid" id="info">
+    <div class="container">
+        <div class="pt-5 row">
+                <div class="container-fluid mt-5">
+                    <div class="row d-flex align-items-center justify-content-center">
+                        <div class="col-lg-6">
+                            <img src="/uploads/products/{{ $products->image or 'placeholder.png' }}" class="img-fluid rounded shadow">
+                        </div>
+                        <div class="col-lg-6">
+                            <h2 class="h-b mt-2">{{ $products->title }}</h2>
+                            <small class="h6 text-muted mt-2 fw-semibold">{{ $products->tag }}</small>
+                            <h6 class="h6 text-muted fw-bold mt-2"> Published {{ $products->date != null ?  \Carbon\Carbon::parse($products->date)->format('F j, Y') : $products->created_at->format('F j, Y') }}</h6>
+                             <div class="row text-center">
+                                <button class="btn btn-dark background-blue rounded-pill p-2 px-3 mt-3 fw-bold">{{ $products->category }}</button>
+                                <a href="{{ $products->shop }}" target="_block" class="text-decoration-none ms-2 mt-4 h5"><i class="fa-solid fa-basket-shopping"></i> Buy it on NU Wave Shop</a>
+                             </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="container mt-5 pt-5 ">
+    <div class="row">
+        <div class="col-lg-9">
+            <h1 class="h-b"> Abstract</h1>
+        </div>
+        <div> {!! $products->abstract !!}</div>
+    </div>
+</div>
+<div class="container mt-5 pt-5 ">
+    <div class="row">
+        <div class="col-lg-9">
+            <h1 class="h-b"> Purpose</h1>
+        </div>
+        <div> {!! $products->purpose!!}</div>
+    </div>
+</div>
+
+@endsection

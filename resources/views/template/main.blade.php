@@ -7,21 +7,14 @@
         <title>@yield('title')</title>
 
         <!--Bootstrap-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"><!-- JQUERY -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
         <!--Icon-->
-        <script src="https://kit.fontawesome.com/f67ab1f0a2.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/88d640619c.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
         <link rel='icon' type='image/png' href='/images/favicon.ico'>
-
-        {{-- Leaflt Map CSS--}}
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-        crossorigin=""/>
-        {{-- Leaflt Map JS--}}
-        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin=""></script>
 
         {{-- Swal fire --}}
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
@@ -32,125 +25,78 @@
             
     </head>
     <body>
+      <button onclick="topFunction()" id="myBtn" title="Back to Top"><i class="fas fa-chevron-circle-up"></i></button>
 
-        {{-- Navigation --}}
-        <div class="Navbar container-fluid px-0 pb-5">
-          <nav class="navbar navbar-expand-lg navbar-light navbar-fixed fixed-top">
-              <div class="container-fluid px-0 px-md-5">
-                <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class='mx-auto'>
-                    <img src="/images/logo.png" alt='logo' class="wave-logo img-fluid"/>
+      <nav class="navbar navbar-expand-lg bg-light shadow sticky-top">
+        <div class="container-fluid px-lg-4 px-2">
+          <a class="navbar-brand" href="{{ route('home') }}"><img src="/images/logo.png" alt='logo' style="height: 2rem" class="wave-logo"/></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse fw-bold" id="navbarNavDropdown">
+            <ul class="navbar-nav text-dark mx-auto text-center pe-lg-5">
+              <li class="nav-item me-2">
+                <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
+              </li>
+              <li class="nav-item dropdown mx-2">
+                <a class="nav-link dropdown-toggle" href="" id="article" role="button" data-bs-toggle="dropdown" aria-expanded="false">Articles</a>
+                <div class="dropdown-menu" aria-labelledby="#article">
+                  <a class="dropdown-item" href="{{ route('soon') }}">Featured</a>
+                  <a class="dropdown-item" href="{{ route('article-latest') }}">Latest</a>
+                  <a class="dropdown-item" href="{{ route('articles') }}">All Articles</a>
                 </div>
-                <div class="collapse navbar-collapse ps-3" id="navbarNav">
-                  
-                  <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                      <a class="nav-link" href="{{ route('home') }}">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a 
-                        class="nav-link dropdown-toggle" 
-                        id="navbarDropdown" 
-                        role="button" 
-                        data-bs-toggle="dropdown" 
-                        aria-expanded="false" 
-                        href="{{ route('articles') }}">
-                        Articles
-                      </a>
-                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="drop-item bg-light" href="{{ route('articles') }}">All articles</a></li>
-                        <li><a class="drop-item bg-light" href='/Coming_Soon'>Featured</a></li>
-                        <li><a class="drop-item bg-light" href="/Coming_Soon">Latest</a></li>
-                      </ul>
-                    </li>
-                    
-                    <li class="nav-item dropdown">
-                      <a 
-                        class="nav-link dropdown-toggle" 
-                        id="navbarDropdown" 
-                        role="button" 
-                        data-bs-toggle="dropdown" 
-                        aria-expanded="false" 
-                        href="/Coming_Soon">
-                       Exhibit
-                      </a>
-                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="drop-item bg-light" href="/exhibits">All exhibit</a></li>
-                        <li><a class="drop-item bg-light" href="/Coming_Soon">Recent</a></li>
-                        <li><a class="drop-item bg-light" href="/Coming_Soon">Upcoming</a></li>
-                        <li><a class="drop-item bg-light" href="/Coming_Soon">Gallery</a></li>
-                      </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a 
-                        class="nav-link dropdown-toggle" 
-                        id="navbarDropdown" 
-                        role="button" 
-                        data-bs-toggle="dropdown" 
-                        aria-expanded="false" 
-                        href="{{ route('innovators') }}">
-                       Innovators
-                      </a>
-                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="drop-item bg-light" href="{{ route('innovators') }}">Featured</a></li>
-                        <li><a class="drop-item bg-light" href="{{ route('innovators') }}">Newest</a></li>
-                      </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a 
-                        class="nav-link dropdown-toggle" 
-                        id="navbarDropdown" 
-                        role="button" 
-                        data-bs-toggle="dropdown" 
-                        aria-expanded="false" 
-                        href="{{ route('products') }}">
-                        Products
-                      </a>
-                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="drop-item bg-light" href="{{ route('products') }}">All products</a></li>
-                        <li><a class="drop-item bg-light" href="/Coming_Soon">Categories</a></li>
-                        <li><a class="drop-item bg-light" href="/Coming_Soon">New</a></li>
-                      </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a 
-                        class="nav-link dropdown-toggle" 
-                        id="navbarDropdown" 
-                        role="button" 
-                        data-bs-toggle="dropdown" 
-                        aria-expanded="false" 
-                        href="/labs">
-                       Labs
-                      </a>
-                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="drop-item bg-light" href="/Coming_Soon">Innovation</a></li>
-                        <li><a class="drop-item bg-light" href="/Coming_Soon">Incubation</a></li>
-                      </ul>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="/about">About</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="/contact">Contact</a>
-                    </li>
-                   
-                  </ul>
-                  <div class="signIn d-flex">
-                    <div class="pe-2 py-2 text-dark">
-                      <i class="bi bi-bag pe-2"></i>
-                      <span>0</span>
-                    </div>
-                    
-                    <a href="#" class="text-decoration-none" style="color: black; z-index: 1"> 
-                      <button class="btn text-light" style="background-color: #2634B2">Sign in</button>
-                    </a> 
-                  </div>
+              </li>
+              <li class="nav-item dropdown mx-2">
+                <a class="nav-link dropdown-toggle" href="" id="exhibit" role="button" data-bs-toggle="dropdown" aria-expanded="false">Exhibits</a>
+                <div class="dropdown-menu" aria-labelledby="#exhibit">
+                  <a class="dropdown-item" href="{{ route('soon') }}">Recent</a>
+                  <a class="dropdown-item" href="{{ route('soon') }}">Upcoming</a>
+                  <a class="dropdown-item" href="{{ route('soon') }}">Gallery</a>
+                  <a class="dropdown-item" href="{{ route('exhibits') }}">All Exhibits</a>
                 </div>
-              </div>
-            </nav>
+              </li>
+              <li class="nav-item dropdown mx-2">
+                <a class="nav-link dropdown-toggle" href="" id="innovator" role="button" data-bs-toggle="dropdown" aria-expanded="false">Innovators</a>
+                <div class="dropdown-menu" aria-labelledby="#innovator">
+                  <a class="dropdown-item" href="{{ route('soon') }}">Featured</a>
+                  <a class="dropdown-item" href="{{ route('innovators') }}">All Innovators</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown mx-2">
+                <a class="nav-link dropdown-toggle" href="" id="products" role="button" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
+                <div class="dropdown-menu" aria-labelledby="#products">
+                  <a class="dropdown-item" href="{{ route('soon') }}">Featured</a>
+                  <a class="dropdown-item" href="{{ route('products-latest') }}">Latest</a>
+                  <a class="dropdown-item" href="{{ route('soon') }}">Categories</a>
+                  <a class="dropdown-item" href="{{ route('products') }}">All Products</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown mx-2">
+                <a class="nav-link dropdown-toggle" href="" id="labs" role="button" data-bs-toggle="dropdown" aria-expanded="false">Labs</a>
+                <div class="dropdown-menu" aria-labelledby="#labs">
+                  <a class="dropdown-item" href="{{ route('soon') }}">Innovation</a>
+                  <a class="dropdown-item" href="{{ route('soon') }}">Incubation</a>
+                </div>
+              </li>
+              <li class="nav-item mx-2">
+                <a class="nav-link" href="{{ route('soon') }}">About</a>
+              </li>
+              <li class="nav-item mx-2">
+                <a class="nav-link" href="{{ route('contact') }}">Contact</a>
+              </li>
+           
+            </ul>
+          <div class="">
+          
+            <a class="btn background-blue fw-bold" href="{{ route('soon') }}">&nbsp; Sign In &nbsp;</a>
+        
+
+          </div>
+         
         </div>
+      </nav>
+
+     
 
         {{-- Page Content --}}
         <div class="content">
@@ -159,282 +105,127 @@
 
         <div class="mt-5 pt-5" style="height:200px;"></div>
 
-        <footer class="footer p-3">
-            <div class="Footer container-fluid px-0">
-                <div class="container">
-                <div class="d-md-flex border-2 border-bottom">
-                  <div
-                   style="width: fit-content; height: fit-content"
-                    class="mx-auto"
-                  >
-                    <img src="/images/logo2.png" alt="nu wave" class="img-fluid" />
-                    <div class="contact ps-2">
-                      <div class="pb-2">
-                        <i class="bi bi-geo-alt"></i><span> 551 M.F. Jhocson St. Sampaloc, Manila, PH 1008</span>
-                      </div>
-                      <div>
-                        <i class="bi bi-telephone"></i><span> +632 8712-1900</span>
-                      </div>
-                    </div>
-                    
-                  </div>
-                  <div class="row gy-5 pt-5">
-                    <div class="col-md-3">
-                        <div class="d-flex justify-content-center">
-                            <div>
-                              <div class="title">
-                                <h6>
-                                  Home
-                                </h6>
-                              </div>
-                              <div class="content px-3">
-                                <ul>
-                                  <li>
-                                    <a href="#">
-                                      Landing
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="#">
-                                      Featured
-                                    </a>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                    <div class="col-md-3">
-                        <div class="d-flex justify-content-center">
-                            <div>
-                            <div class="title">
-                                <h6>
-                                  Exhibit
-                                </h6>
-                              </div>
-                              <div class="content px-3">
-                                <ul>
-                                  <li>
-                                    <a href="exhibits">
-                                      All exhibit
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="Coming_Soon">
-                                      Recent
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="Coming_Soon">
-                                      Upcoming
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="Coming_Soon">
-                                      Gallery
-                                    </a>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="d-flex justify-content-center">
-                        <div>
-                        <div class="title">
-                            <h6>
-                              Innovators
-                            </h6>
-                          </div>
-                          <div class="content px-3">
-                            <ul>
-                              <li>
-                                <a href="featured_innovators">
-                                  Featured
-                                </a>
-                              </li>
-                              <li>
-                                <a href="Coming_Soon">
-                                  Newest
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="d-flex justify-content-center">
-                        <div>
-                          <div class="title">
-                            <h6>
-                              About
-                            </h6>
-                          </div>
-                          <div class="content px-3">
-                            <ul>
-                              <li>
-                                <a href="/Coming_Soon">
-                                  CENTIE
-                                </a>
-                              </li>
-                              <li>
-                                <a href="/Coming_Soon">
-                                  National University
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="d-flex justify-content-center">
-                        <div>
-                          <div class="title">
-                            <h6>
-                              Articles
-                            </h6>
-                          </div>
-                          <div class="content px-3">
-                            <ul>
-                            <li>
-                                <a href="/article">
-                                  All articles
-                                </a>
-                              </li>
-                              <li>
-                                <a href="/Coming_Soon">
-                                  Latest
-                                </a>
-                              </li>
-                              <li>
-                                <a href="/Coming_Soon">
-                                  Featured
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="d-flex justify-content-center">
-                        <div>
-                          <div class="title">
-                            <h6>
-                              Products
-                            </h6>
-                          </div>
-                          <div class="content px-3">
-                            <ul>
-                            <li>
-                                <a href="/products">
-                                  All products
-                                </a>
-                              </li>
-                              <li>
-                                <a href="/Coming_Soon">
-                                  Categories
-                                </a>
-                              </li>
-                              <li>
-                                <a href="/Coming_Soon">
-                                  New
-                                </a>
-                              </li>
-                              <li>
-                                <a href="/Coming_Soon">
-                                  Featured
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="d-flex justify-content-center">
-                        <div>
-                          <div class="title">
-                            <h6>
-                              Labs
-                            </h6>
-                          </div>
-                          <div class="content px-3">
-                            <ul>
-                              <li>
-                                <a href="/Coming_Soon">
-                                  Innovation
-                                </a>
-                              </li>
-                              <li>
-                                <a href="/Coming_Soon">
-                                  Incubation
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="d-flex justify-content-center">
-                        <div>
-                          <div class="title">
-                            <h6>
-                              Connect
-                            </h6>
-                          </div>
-                          <div class="content px-3">
-                            <a href="https://facebook.com/NUCentIE" target="_blank" rel="noopener noreferrer">
-                              <i class="bi bi-facebook text-primary px-1"></i>   
-                            </a>
-                            <a class="fb-messenger" href="https://m.me/NUCentIE" target='_blank' rel="noopener noreferrer">
-                              <i class="bi bi-messenger px-1" style="color: purple"></i>
-                            </a>
-                            <i class="bi bi-youtube px-1 text-danger"></i>
-                            <i class="bi bi-envelope-fill px-1 text-warning"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-          
-                <div class="container-fluid d-md-flex justify-content-evenly credits">
-                  <div class="container p-5">
+        <hr class="shadow">
+          <footer class="container-fluid footer mt-5">
+          <div class="container">
+            <div class="row pb-5 g-5">
+              <div class="col-lg-3 d-flex flex-column align-items-center">
+              <img src="/images/logo-main.svg" alt="" class="img-fluid p-3">
+              <img src="/images/nu_logo.png" alt="" class=" mt-3 img-fluid w-25">
+              <h6 class="mt-3">&copy; Copyright and Disclaimer</h6>
+              </div>
+              <div class="col-lg-9">
+                <div class="row h-50">
+                  <div class="col-lg-3 col-6">
                     <div class="row">
-                      <div class="col-md-6 text-center text-md-end">
-                        <a href='https://www.facebook.com/NUWizardCircle/' target='_blank' rel='noopener noreferrer'>
-                          <img src="/images/wizard.png" alt="..." class="img-fluid" />
-                        </a>
-                      </div>
-                      <div class="col-md-6 text-center text-md-start">
-                        <span class="footer-text">NU WIZARDS CIRCLE WEB DEV</span>
-                      </div>
+                      <a href="{{ route('soon') }}" class="text-decoration-none"><h4 class="h4 fw-bold">Home</h4></a>
+                        <h4 class="h4 fw-bold">Articles</h4>
+                        <a href="" class="text-decoration-none"><h6 class="h6">Featured</h6></a>
+                        <a href="{{ route('article-latest') }}" class="text-decoration-none"><h6 class="h6">Latest</h6></a>
+                        <a href="{{ route('articles') }}" class="text-decoration-none"><h6 class="h6">All Articles</h6></a>
                     </div>
                   </div>
-                  <div class="container p-5">
+                  <div class="col-lg-3 col-6">
                     <div class="row">
-                      <div class="col-md-6 text-center text-md-end">
-                        <a href='/Coming_Soon'>
-                          <span class="footer-text">Copyright and Disclaimer</span>
-                        </a>
-                      </div>
-                      <div class="col-md-6 text-center text-md-start">
-                        <a href='https://national-u.edu.ph/' target='_blank' rel=" noopener noreferrer">
-                          <img src="/images/nu_logo.png" alt="..." class="img-fluid" />
-                        </a>
-                      </div>
+                      <h4 class="h4 fw-bold">Innovators</h4>
+                      <a href="{{ route('soon') }}" class="text-decoration-none"><h6 class="h6">Featured</h6></a>
+                      <a href="{{ route('innovators') }}" class="text-decoration-none"> <h6 class="h6">All Innovators</h6></a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-6">
+                    <div class="row">
+                      <h4 class="h4 fw-bold">Labs</h4>
+                      <a href="{{ route('soon') }}" class="text-decoration-none"> <h6 class="h6">Innovation</h6></a>
+                      <a href="{{ route('soon') }}" class="text-decoration-none"> <h6 class="h6">Incubation</h6></a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-6">
+                    <div class="row">
+                      <a href="{{ route('contact') }}" class="text-decoration-none"> <h4 class="h4 fw-bold">Contact</h4></a>
+                      <h6 class="h6"> <i class="fas fa-map-marker-alt"></i> 551 M.F. Jhocson St. Sampaloc, Manila, PH 1008</h6>
+                      <a href="mailto:centie@national-u.edu.ph" class="text-decoration-none"> <h6 class="h6"><i class="fa-solid fa-envelope"></i> centie@national-u.edu.ph</h6></a>
+                      <h6 class="h6"><i class="fas fa-phone"></i> (+632) 8712-1900</h6>
                     </div>
                   </div>
                 </div>
+                <div class="row h-50 mt-2">
+                  <div class="col-lg-3 col-6">
+                    <div class="row">
+                      <h4 class="h4 fw-bold">Exhibits</h4>
+                      <a href="{{ route('soon') }}" class="text-decoration-none"><h6 class="h6">Recent</h6></a>
+                      <a href="{{ route('soon') }}" class="text-decoration-none"><h6 class="h6">Upcoming</h6></a>
+                      <a href="{{ route('soon') }}" class="text-decoration-none"><h6 class="h6">Gallery</h6></a>
+                      <a href="{{ route('soon') }}" class="text-decoration-none"><h6 class="h6">All Exhibits</h6></a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-6">
+                    <div class="row ">
+                      <h4 class="h4 fw-bold">Products</h4>
+                      <a href="{{ route('soon') }}" class="text-decoration-none"><h6 class="h6">Featured</h6></a>
+                      <a href="{{ route('products-latest') }}" class="text-decoration-none"> <h6 class="h6">Latest</h6></a>
+                      <a href="{{ route('soon') }}" class="text-decoration-none"><h6 class="h6">Categories</h6></a>
+                      <a href="{{ route('products') }}" class="text-decoration-none"><h6 class="h6">All Products</h6></a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-6">
+                    <div class="row">
+                      <a href="{{ route('soon') }}" class="text-decoration-none"> <h4 class="h4 fw-bold ">About</h4></a>
+                      <a href="{{ route('soon') }}" class="text-decoration-none"> <h6 class="h6">Center for Innovation and Entrepreneurship</h6></a>
+                      <a href="{{ route('soon') }}" class="text-decoration-none"> <h6 class="h6">National University</h6></a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-6">
+                    <div class="row">
+                      <h4 class="h4 fw-bold">Connect</h4>
+                    <div class="d-flex flex-row">
+                      <a href="{{ route('soon') }}" class="text-decoration-none"> <i class="fab fa-facebook-square me-2 h2"></i></a>
+                        <a href="{{ route('soon') }}" class="text-decoration-none"><i class="fab fa-facebook-messenger mx-2 h2"></i></a>
+                          <a href="{{ route('soon') }}" class="text-decoration-none"><i class="fab fa-youtube mx-2 h2"></i></a>
+                    </div>
+                    </div>
+                  </div>
                 </div>
-        </footer>        
+              </div>
+            </div>
+          </div>
+       
+        </footer>
+        <div class="container-fluid" style="background-color: #ffc000" >
+          <div class="container">
+            <div class="row">
+              <div class="col-12 mt-3">
+                <p class="text-center">&copy; Copyright 2022. All Rights Reserved. NU Wizards Circle Web Dev Team</p>
+              </div>
+            </div>
+          </div>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    </body>
+
+       <script>
+        
+        let paginator = $('nav > ul.pagination');
+        paginator.find('li').addClass('page-item');
+        paginator.find('li > *').addClass('page-link');
+        paginator.find('li:nth-child(1) > *').text('Previous');
+        paginator.find('li:nth-last-child(1) > *').text('Next');
+       </script>
+
+        <script>
+          var mybutton = document.getElementById("myBtn");
+          window.onscroll = function() {scrollFunction()};
+
+          
+          function scrollFunction() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+              mybutton.style.display = "block";
+            } else {
+              mybutton.style.display = "none";
+            }
+          }
+          function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+          }
+
+          </script>
+   </body>
 </html>

@@ -1,0 +1,26 @@
+@extends('template.main')
+
+@section('title', 'NU Wave | Article')
+@section('main-content')
+
+<div class="row">
+    <div class="col d-flex justify-content-center">
+        <img src="/uploads/articles/{{ $article->image or 'placeholder.png' }}" class="buildkit-image">
+    </div>
+</div>
+
+<div class = "row justify-content-center">
+    <div class = "col-lg-5 py-5">
+        <h1 class="h-b text-center">{{ $article->title }}</h1>
+        <p class="text-center">Posted on: {{ $article->created_at->format('F j, Y') }}</p>
+
+        <div class="my-5">
+            {!! $article->description !!}
+        </div>
+
+
+
+    </div>
+</div>
+
+@endsection

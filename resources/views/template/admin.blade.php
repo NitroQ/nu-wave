@@ -15,10 +15,6 @@
         <script src="https://kit.fontawesome.com/f67ab1f0a2.js" crossorigin="anonymous"></script>
         <link rel='icon' type='image/png' href='/images/favicon.ico'>
 
-        {{-- <!--Summernote-->
-        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js" defer></script> --}}
-
         <script src="https://cdn.tiny.cloud/1/vn4rdetp72raf9qtcb8oym9d587dpfmmcdi1wczd8g649kb6/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
       
         <!--CSS/Stylesheets-->
@@ -45,14 +41,26 @@
         {{-- Side Navigation --}}
         <div class="sidebar-light border-right" id="sidebar-wrapper">
             <ul class="nav navbar-nav side-nav mt-3">
-              <li>
-                <a href=""><i class="fas fa-map"></i> Dashboard</a>
-              </li>
  
-              <small>EMERGENCY</small>
+              <small>Website Management</small>
                 <li>
-                  <a href="{{ route('admin.article.index') }}"><i class="fas fa-exclamation-triangle"></i> Alerts</a>
+                  <a href="{{ route('admin.article.index') }}"><i class="fas fa-newspaper"></i> Articles</a>
                 </li>
+                <li>
+                  <a href="{{ route('admin.product.index') }}"><i class="fas fa-luggage-cart"></i> Products</a>
+                </li>
+                <li>
+                  <a href="{{ route('admin.exhibit.index') }}"><i class="fas fa-luggage-cart"></i> Exhibits</a>
+                </li>
+
+
+                <li>
+                  <a href="{{ route('admin.innovator.index') }}"><i class="fas fa-users"></i> Innovators</a>
+                </li>
+                <li>
+                  <a href="{{ route('admin.carousel.index') }}"><i class="fas fa-image"></i> Carousel</a>
+                </li>
+
 
             </ul>
         </div>
@@ -70,6 +78,13 @@
 
 
         <script>
+
+          let paginator = $('nav > ul.pagination');
+                  paginator.find('li').addClass('page-item');
+                  paginator.find('li > *').addClass('page-link');
+                  paginator.find('li:nth-child(1) > *').text('Previous');
+                  paginator.find('li:nth-last-child(1) > *').text('Next');
+                  
             $(document).ready(function(){
                 $(".col-a").click(function(){
                     $('.collapse.show').collapse('hide');
@@ -135,40 +150,6 @@
   contextmenu: "link image imagetools table",
  });
           </script>
-        {{-- <script>
-          $(document).ready(function() {
-      
-      
-          $('#description').summernote({
-                  placeholder: 'Write your post content here.',
-                  tabsize: 2,
-                  height: 300,
-                  spellCheck: true,
-                  toolbar: [
-                      ['style', ['style']],
-                      ['font', ['bold', 'italic', 'underline', 'superscript', 'subscript' ,'clear']],
-                      ['fontsize', ['fontsize']],
-                      ['fontname', ['fontname']],
-                      ['color', ['color']],
-                      ['para', ['ul', 'ol', 'paragraph' ,'height']],
-                      ['insert', ['link', 'picture', 'hr' , 'table']],
-                      ['misc'  , ['undo' , 'redo' , 'fullscreen']]
-                  ],
-                  styleTags: [
-                      { title: 'Blockquote', tag: 'blockquote', className: 'blockquote', value: 'blockquote' },
-                      'p',
-                      'h1', 'h2', 'h3', 'h4', 'h5', 'h6'
-                  ],
-                  popover: {
-                      image: [
-                          ['image', ['resizeFull', 'resizeHalf', 'resizeQuarter', 'resizeNone']],
-                          ['float', ['floatLeft', 'floatRight', 'floatNone']],
-                          ['remove', ['removeMedia']]
-                      ]
-                  }
-            });
-      
-        });
-      </script> --}}
+       
     </body>
 </html>

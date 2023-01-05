@@ -4,32 +4,19 @@
 
 @section('css')
 <style>
-    #login-img{
-        display: none;
-        background-image: url('/images/carousel1.png');
-        background-position: center;
-        height: 100vh;
-        background-size: cover;
-    }
-	@media screen and (min-width:992px){
-        #login-img{
-            display: block;
-        }
-    }
+
 </style>
 @endsection
 @section('main-content')
 
 <div class="row justify-content-center align-items-center">
     {{-- PAGE IMAGE --}}
-   <div class="col-lg-6" id="login-img">
-   </div>
    {{-- FORM --}}
    <div class="col-lg-6 col-12 py-5" id="form-user">
        <div class="container">
            {{-- LOGO --}}
            <div class="row d-flex justify-content-center mb-5 mb-lg-0">
-               <div class="col-lg-2 col-3">
+               <div class="col-lg-5 col-3">
                    <img src="/images/logo.png" class="img-fluid" id="form-logo">
                </div>
            </div>

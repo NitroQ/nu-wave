@@ -66,6 +66,7 @@ ul{
 .side-nav li a:hover,
 .side-nav li a.active {
   outline: none;
+  color: white !important;
   background-color:#2634B2 !important;
   font-weight: bold;
 }

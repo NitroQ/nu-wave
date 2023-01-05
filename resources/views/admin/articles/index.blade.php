@@ -17,7 +17,7 @@
 
 <div class="row">
     <div class="col col-lg-3">
-        <a href="{{ route('admin.article.create') }}"><button class="btn btn-primary w-100"><i class="fas fa-plus-circle"></i> Create An Alert!</button></a>
+        <a href="{{ route('admin.article.create') }}"><button class="btn btn-primary w-100"><i class="fas fa-plus-circle"></i> Add an Article</button></a>
     </div>
 </div>
 <br>
@@ -31,8 +31,7 @@
                     <th></th>
                     <th scope="col">Title</th>
                     <th scope="col">Tag</th>
-                    <th scope="col">Category</th>
-                    <th scope="col">Date</th>
+                    <th scope="col">Created At</th>
                     <th scope="col">Status</th>
                     <th scope="col">Action</th>
                 </tr>
@@ -43,13 +42,12 @@
                     <td><img src="/uploads/articles/{{ $x->image or 'placeholder.png' }}" width="30px" height="30px" style="object-fit: cover"></td>
                     <td>{{ $x->title }}</td>
                     <td>{{ $x->tag }}</td>
-                    <td>{{ $x->category }}</td>
                     <td>{{ $x->created_at->format('F j, Y') }} {{ $x->created_at->format('g:i A') }}</td>
                     <td>
                         @if ($x->active == 1)
-                            <a href="{{ route('article.set-active' , [ $x->id ]) }}"><button type="button" class="btn btn-sm btn-primary">Set Inactive</button></a>&nbsp;
+                            <a href="{{ route('article.set-inactive' , [ $x->id ]) }}"><button type="button" class="btn btn-sm btn-primary">Set Inactive</button></a>&nbsp;
                         @else
-                            <a href="{{ route('article.set-inactive' , [ $x->id ]) }}"><button type="button" class="btn btn-sm btn-outline-primary">Set Active</button></a>&nbsp;
+                            <a href="{{ route('article.set-active' , [ $x->id ]) }}"><button type="button" class="btn btn-sm btn-outline-primary">Set Active</button></a>&nbsp;
                          @endif
                     </td>
                     <td>
@@ -62,6 +60,7 @@
                 @endforeach
             </tbody>
         </table>
+        {{ $article->links() }}
 	</div>
 </div>
 @endsection

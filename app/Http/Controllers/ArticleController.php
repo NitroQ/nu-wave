@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Articles;
 use Validator;
 use Log;
+use DB;
 
 class ArticleController extends Controller
 {
@@ -32,7 +33,7 @@ class ArticleController extends Controller
 
     public function index()
     {
-        $article = Articles::get();
+        $article = Articles::paginate(15);
 
         return view('admin.articles.index',[
             'article' => $article
@@ -47,36 +48,44 @@ class ArticleController extends Controller
 
     public function store(Request $request)
     {
-
         $validator = Validator::make($request->all(), [
             'image' => 'required',
-            'title' => 'required',
-            'category' => 'required',
             'tag' => 'required',
+            'author' => 'required',
+            'title' => 'required',
             'description' => 'required'
-        ]);
-        
+        ], [
+			'image.required' => 'Image is required.',
+            'tag.required' => 'Tag is required.',
+            'author.required' => 'Author is required.',
+            'title.required' => 'Title is required.',
+            'description.required' => 'Description is required.'
+		]);
         if ($validator->fails()) {
+
 			return redirect()
 				->back()
 			    ->withErrors($validator)
 				->withInput();
+        }else{
+            $destinationPath = 'uploads/articles';
+            $photoExtension = $request->file('image')->getClientOriginalExtension(); 
+            $file = 'image'.uniqid().'.'.$photoExtension;
+            $request->file('image')->move($destinationPath, $file);
+            
+            DB::beginTransaction();
+            Articles::firstOrCreate([
+                'title' => $request->input('title'),
+                'tag'  =>  $request->input('tag'),
+                'author' => $request->input('author'),
+                'date'  =>  $request->input('date'),
+                'description'  =>  $request->input('description'),
+                'image' => $file
+            ]);
+            DB::commit();
+            Log::info("image loaded");
+            return redirect()->route('admin.article.index')->with('flash_message', 'Successfully Added Article');
         }
-
-        $destinationPath = 'uploads/articles';
-        $photoExtension = $request->file('image')->getClientOriginalExtension(); 
-        $file = 'image'.uniqid().'.'.$photoExtension;
-        $request->file('image')->move($destinationPath, $file);
-        
-        $alerts = Articles::firstOrCreate([
-            'title' => $request->input('title'),
-			'tag'  =>  $request->input('tag'),
-            'category'  =>  $request->input('category'),
-            'description'  =>  $request->input('description'),
-            'image' => $file
-        ]);
-
-        return redirect()->route('admin.article.index')->with('flash_message', 'Successfully Added Alert');
 
     }
 
@@ -94,7 +103,7 @@ class ArticleController extends Controller
         $validator = Validator::make($request->all(), [
             'title' => 'required',
             'tag' => 'required',
-            'category' => 'required',
+            'author' => 'required',
             'description' => 'required'
         ]);
         
@@ -104,31 +113,33 @@ class ArticleController extends Controller
 			    ->withErrors($validator)
 				->withInput();
         }
-
+        DB::beginTransaction();
         if($request->file('image')!=''){
             $destinationPath = 'uploads/articles';
             $photoExtension = $request->file('image')->getClientOriginalExtension(); 
             $file = 'image'.uniqid().'.'.$photoExtension;
             $request->file('image')->move($destinationPath, $file);
 
-            $alert = Articles::find($id); 
-            $alert->title = $request->input('title');
-            $alert->tag = $request->input('tag');
-            $alert->category  = $request->input('category');
-            $alert->description = $request->input('description');
-            $alert->image = $file;
-            $alert->save();
+            $article = Articles::find($id); 
+            $article->title = $request->input('title');
+            $article->tag = $request->input('tag');
+            $article->author = $request->input('author');
+            $article->date = $request->input('date');
+            $article->description = $request->input('description');
+            $article->image = $file;
+            $article->save();
         }
         else{
-            $alert = Articles::find($id); 
-            $alert->title = $request->input('title');
-            $alert->tag = $request->input('tag');
-            $alert->category = $request->input('category');
-            $alert->description = $request->input('description');
-            $alert->save();
+            $article = Articles::find($id); 
+            $article->title = $request->input('title');
+            $article->author = $request->input('author');
+            $article->tag = $request->input('tag');
+            $article->date = $request->input('date');
+            $article->description = $request->input('description');
+            $article->save();
         }
-
-        return redirect()->route('admin.article.index')->with('flash_message', 'Successfully Updated Alert');
+        DB::commit();
+        return redirect()->route('admin.article.index')->with('flash_message', 'Successfully Updated Article');
 
     }
     public function delete($id){
@@ -136,6 +147,6 @@ class ArticleController extends Controller
         $x = Articles::find($id);
         $x->delete();
 
-        return redirect()->route('admin.article.index')->with('flash_message', 'Successfully Deleted Alert');
+        return redirect()->route('admin.article.index')->with('flash_message', 'Successfully Deleted Article');
     }
 }
